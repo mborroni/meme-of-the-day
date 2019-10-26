@@ -1,1 +1,1 @@
-import api from "./api.js";
+import { getMemes } from "./api.js";
