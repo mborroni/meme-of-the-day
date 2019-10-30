@@ -1,16 +1,15 @@
 import { getMemes, ENDPOINT } from "./api.js";
+import { dataRestructuring, bySize, byAscendingId, getToday, getRandomIndex } from "./utils.js";
 
-function dataRestructuring(meme) {
-  const { id, name, width, height, url } = meme;
-  return { id, name, width, height, url };
+function getMemeOfTheDay(memes) {
+  today = getToday();
+  return memes[today - 1];
 }
 
-function bySize(meme) {
-  return meme.width >= 500 || meme.height >= 500;
-}
-
-function byAscendingId(memeOne, memeTwo) {
-  return parseInt(memeOne.id) - parseInt(memeTwo.id);
+function getRandomMeme(memes) {
+  const randomIndex = getRandomIndex();
+  const randomMeme = memes[randomIndex];
+  return randomMeme;
 }
 
 getMemes(ENDPOINT)
@@ -21,4 +20,7 @@ getMemes(ENDPOINT)
       .sort(byAscendingId)
   )
   .then(memes => console.dir(memes))
+  .then(memes => {
+    const memeOfTheDay = getMemeOfTheDay(memes);
+  })
   .catch(error => console.log(error.message));
