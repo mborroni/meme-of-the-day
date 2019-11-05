@@ -12,10 +12,10 @@ export function byAscendingId(memeOne, memeTwo) {
 }
 
 export function getToday() {
-  today = new Date();
+  const today = new Date();
   return today.getDate();
 }
 
-export function getRandomIndex() {
-  return Math.floor(Math.random() * memes.length);
+export function getRandomIndex(length) {
+  return Math.floor(Math.random() * length);
 }
