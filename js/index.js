@@ -15,6 +15,20 @@ const btn = document.querySelector('.btn-get-random-meme');
 
 btn.addEventListener('click', displayRandomMeme);
 
+getMemes(ENDPOINT)
+  .then(memes =>
+    memes
+      .map(dataRestructuring)
+      .filter(bySize)
+      .sort(byAscendingId)
+  )
+  .then(memes => {
+    console.dir(memes);
+    memesArray = memes;
+    displayMemeOfTheDay();
+  })
+  .catch(error => console.log(error.message));
+
 function displayMemeOfTheDay() {
   const memeOfTheDay = getMemeOfTheDay();
   img.src = memeOfTheDay.url;
@@ -38,17 +52,3 @@ function getRandomMeme() {
   const randomIndex = getRandomIndex(memesArray.length);
   return memesArray[randomIndex];
 }
-
-getMemes(ENDPOINT)
-  .then(memes =>
-    memes
-      .map(dataRestructuring)
-      .filter(bySize)
-      .sort(byAscendingId)
-  )
-  .then(memes => {
-    console.dir(memes);
-    memesArray = memes;
-    displayMemeOfTheDay();
-  })
-  .catch(error => console.log(error.message));
