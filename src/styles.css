@@ -2,12 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Calistoga&display=swap');
-
 :root {
   --white: #eaeaea;
 }
 
-.main-container {
-  @apply flex-grow flex items-center justify-around flex-col py-6;
+body {
+  font-family: 'Amatic SC', cursive;
+}
+
+.btn-get-random-meme {
+  @apply bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow inline-flex items-center;
+}
+
+.btn-get-random-meme:hover {
+  @apply bg-gray-100;
 }

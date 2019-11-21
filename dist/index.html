@@ -5,14 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Meme of the day</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Lalezar|Staatliches&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="compiled.css" />
     <script defer src="../js/index.js" type="module"></script>
   </head>
   <body>
-    <main>
-      <h1 class="title">Meme of the day</h1>
-      <img src="" alt="" class="meme" />
-      <button class="btn-get-random-meme">Get random meme!</button>
+    <main class="flex-grow flex items-center justify-around flex-col py-6">
+      <h1 class="title text-3xl">Meme of the day</h1>
+      <img src="" alt="" class="meme py-4 max-w-lg" />
+      <button class="btn-get-random-meme">
+        <img
+          class="w-6 h-6 mr-2"
+          src="https://img.icons8.com/pastel-glyph/64/000000/search--v2.png"
+          alt="Search icon"
+        />
+        <span class="btn-text text-xl">Get random meme!</span>
+      </button>
     </main>
   </body>
 </html>
