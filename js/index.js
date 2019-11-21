@@ -12,6 +12,7 @@ let memesArray = [];
 const img = document.querySelector('.meme');
 const title = document.querySelector('.title');
 const btn = document.querySelector('.btn-get-random-meme');
+const btnText = document.querySelector('.btn-text');
 
 btn.addEventListener('click', displayRandomMeme);
 
@@ -40,7 +41,7 @@ function displayRandomMeme() {
   title.textContent = 'Random Meme';
   img.src = randomMeme.url;
   img.alt = randomMeme.name;
-  btn.textContent = 'Get another random Meme!';
+  btnText.innerText = 'Get another random Meme!';
 }
 
 function getMemeOfTheDay(memes) {
